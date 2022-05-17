@@ -104,3 +104,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 install(FILES laser_filters_plugins.xml nodelets.xml
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+install(DIRECTORY examples
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
