@@ -1,4 +1,20 @@
 scan_filter_chain:
+- type: laser_filters/LaserScanBoxFilter
+  name: box
+  params:
+    box_frame: base_link
+    max_x: 0.355228
+    max_y: 0.300
+    max_z: 1.5
+    min_x: -0.500
+    min_y: -0.300
+    min_z: -0.1
+    invert: false
+- name: angle
+  type: laser_filters/LaserScanAngularBoundsFilterInPlace
+  params:
+    lower_angle: -0.785
+    upper_angle: -2.355
 - name: speckle_filter
   type: laser_filters/LaserScanSpeckleFilter
   params:
@@ -8,7 +24,7 @@ scan_filter_chain:
     filter_type: 0
 
     # Only ranges smaller than this range are taken into account
-    max_range: 20.0
+    max_range: 10.0
 
     # filter_type[0] (Distance): max distance between consecutive points
     # filter_type[1] (RadiusOutlier): max distance between points
@@ -17,3 +33,8 @@ scan_filter_chain:
     # filter_type[0] (Distance): Number of consecutive ranges that will be tested for max_distance
     # filter_type[1] (RadiusOutlier): Minimum number of neighbors
     filter_window: 4
+
+
+    #footprint: [[-0.166772, -0.270], [-0.166772, 0.270], [0.355228, 0.270], [0.355228, -0.270]]
+
+
